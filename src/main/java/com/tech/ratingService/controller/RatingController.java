@@ -29,14 +29,14 @@ public class RatingController {
         return ResponseEntity.ok(ratingService.getRatings());
     }
 
-    //get all of user
+    //get all ratings of user
     //@PreAuthorize("hasAuthority('SCOPE_internal') || hasAuthority('Admin')")
     @GetMapping("/users/{userId}")
     public ResponseEntity<List<Rating>> getRatingsByUserId(@PathVariable String userId) {
         return ResponseEntity.ok(ratingService.getRatingByUserId(userId));
     }
 
-    //get all of enterprises
+    //get all ratings of enterprises
     @GetMapping("/enterprises/{enterpriseId}")
     public ResponseEntity<List<Rating>> getRatingsEnterpriseId(@PathVariable String enterpriseId) {
         return ResponseEntity.ok(ratingService.getRatingByEnterpriseId(enterpriseId));
