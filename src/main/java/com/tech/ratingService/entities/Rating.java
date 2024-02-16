@@ -1,5 +1,6 @@
 package com.tech.ratingService.entities;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,6 +13,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @AllArgsConstructor
 @NoArgsConstructor
 @Document("user_ratings")
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Rating {
     @Id
     private String ratingId;
